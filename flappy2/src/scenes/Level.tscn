@@ -1,0 +1,549 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://src/scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/scenes/Pipe.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/sprites/ground.png" type="Texture" id=3]
+[ext_resource path="res://src/script/Ground.gd" type="Script" id=4]
+[ext_resource path="res://assets/sprites/background2.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/background1.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/background3.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/background4.png" type="Texture" id=8]
+[ext_resource path="res://src/script/ParallaxBackground.gd" type="Script" id=9]
+[ext_resource path="res://assets/sprites/background5.png" type="Texture" id=10]
+[ext_resource path="res://Daydream.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://src/scenes/Play.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/sprites/background6.png" type="Texture" id=13]
+[ext_resource path="res://src/script/UI.gd" type="Script" id=14]
+[ext_resource path="res://assets/sprites/bird2.png" type="Texture" id=15]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 173, 10 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 11
+outline_size = 1
+outline_color = Color( 0.396078, 0.556863, 1, 1 )
+font_data = ExtResource( 11 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 3 )
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TapToPlay:margin_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 43.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Play:margin_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -92.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Score2:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Score2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../ChangeSkin:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 23, 82 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../ChangeSkin:rect_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 22, 24 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../ChangeSkin:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Flap:rect_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 39 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "reverse"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Play:margin_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 0.210224 ),
+"update": 0,
+"values": [ 100.0, -92.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TapToPlay:margin_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.21, 0.210224 ),
+"update": 0,
+"values": [ 101.0, 43.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Score2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../ChangeSkin:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -216, 78 ), Vector2( -214, -46 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Flap:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.210224, 1 ),
+"update": 0,
+"values": [ Vector2( 21, -24 ), Vector2( 21, 39 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "start"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Play:margin_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.210224, 1 ),
+"update": 0,
+"values": [ -92.0, 100.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TapToPlay:margin_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.210224, 1 ),
+"update": 0,
+"values": [ 43.0, 101.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Score2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../ChangeSkin:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 26, 85 ), Vector2( -209, 74 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../ChangeSkin:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Flap:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.210224, 1 ),
+"update": 0,
+"values": [ Vector2( 21, 39 ), Vector2( 21, -24 ) ]
+}
+
+[node name="Level" type="Node2D"]
+position = Vector2( 296, 224 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 188.0 ],
+"_edit_vertical_guides_": [ 190.0, 121.0 ]
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource( 9 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( -2, 1 )
+motion_offset = Vector2( -0.692, 0 )
+motion_mirroring = Vector2( 324, 0 )
+
+[node name="Background1" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 128, 188 )
+texture = ExtResource( 6 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( -1, 1 )
+motion_mirroring = Vector2( 324, 0 )
+
+[node name="Background2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 164, 188 )
+texture = ExtResource( 5 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( -0.15, 1 )
+motion_mirroring = Vector2( 324, 0 )
+
+[node name="Background3" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 164, 188 )
+texture = ExtResource( 7 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( -0.1, 1 )
+motion_mirroring = Vector2( 324, 0 )
+
+[node name="Background4" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 164, 188 )
+texture = ExtResource( 8 )
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( -7.5, 1 )
+motion_mirroring = Vector2( 330, 0 )
+
+[node name="Ground" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2( 225.351, 280 )
+scale = Vector2( 1.5, 1 )
+texture = ExtResource( 3 )
+offset = Vector2( -6, -2 )
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( -0.1, 1 )
+motion_mirroring = Vector2( 330, 0 )
+
+[node name="Background6" type="Sprite" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2( 162, 188 )
+texture = ExtResource( 13 )
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( -0.7, 1 )
+motion_mirroring = Vector2( 330, 0 )
+
+[node name="Background7" type="Sprite" parent="ParallaxBackground/ParallaxLayer7"]
+position = Vector2( 162, 188 )
+texture = ExtResource( 10 )
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Ground"]
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Area2D"]
+position = Vector2( -133, 56 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground/Area2D"]
+position = Vector2( -121, -138 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -175, -36 )
+current = true
+zoom = Vector2( 0.076, 0.076 )
+process_mode = 0
+offset_h = -1.0
+
+[node name="Pipe" parent="." instance=ExtResource( 2 )]
+position = Vector2( -106, 72 )
+
+[node name="TimerSpawn" type="Timer" parent="Pipe"]
+wait_time = 2.4
+
+[node name="UI" type="Control" parent="."]
+margin_left = -237.0
+margin_top = -128.0
+margin_right = -113.0
+margin_bottom = 56.0
+theme = SubResource( 2 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score2" type="Label" parent="UI"]
+margin_left = 21.0
+margin_top = 26.0
+margin_right = 138.0
+margin_bottom = 47.0
+rect_scale = Vector2( 0.7, 0.7 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Highscore2" type="Label" parent="UI"]
+margin_left = 21.0
+margin_top = 10.0
+margin_right = 226.0
+margin_bottom = 55.0
+rect_scale = Vector2( 0.4, 0.4 )
+text = "Highscore "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Flap" type="Label" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -62.0
+margin_top = -53.0
+margin_right = 20.0
+margin_bottom = -37.0
+text = "FLap :)"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Jump" type="Button" parent="UI"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 21.0
+margin_top = 1.0
+margin_right = 103.0
+margin_bottom = 183.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TapToPlay" type="RichTextLabel" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -29.0
+margin_top = 43.0
+margin_right = 95.0
+margin_bottom = 68.0
+rect_scale = Vector2( 0.5, 0.5 )
+focus_mode = 2
+text = "tap to play!"
+fit_content_height = true
+scroll_active = false
+selection_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" parent="UI" instance=ExtResource( 12 )]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -62.0
+margin_top = -92.0
+margin_right = 62.0
+margin_bottom = 92.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Play"]
+root_node = NodePath("../..")
+method_call_mode = 1
+anims/RESET = SubResource( 6 )
+anims/reverse = SubResource( 7 )
+anims/start = SubResource( 5 )
+
+[node name="Leaderboard" type="Button" parent="UI"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 39.0
+margin_top = 13.0
+margin_right = 84.0
+margin_bottom = 35.0
+rect_scale = Vector2( 1, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NicknameSubmit" type="Panel" parent="UI"]
+visible = false
+margin_left = 42.0
+margin_top = 72.0
+margin_right = 82.0
+margin_bottom = 101.0
+
+[node name="InsertNickname" type="LineEdit" parent="UI/NicknameSubmit"]
+anchor_left = 0.5
+anchor_top = 0.483
+anchor_right = 0.5
+anchor_bottom = 0.483
+margin_left = -20.0
+margin_top = -5.007
+margin_right = 180.0
+margin_bottom = 44.993
+rect_scale = Vector2( 0.2, 0.2 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "nickname"
+placeholder_alpha = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="UI/NicknameSubmit"]
+margin_right = 200.0
+margin_bottom = 45.0
+rect_scale = Vector2( 0.2, 0.2 )
+text = "leaderboard
+insert nickname"
+align = 1
+valign = 1
+
+[node name="Submit" type="Button" parent="UI/NicknameSubmit"]
+margin_top = 19.0
+margin_right = 100.0
+margin_bottom = 44.0
+rect_scale = Vector2( 0.4, 0.4 )
+text = "submit"
+
+[node name="ChangeSkin" type="Button" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 23.0
+margin_top = 82.0
+margin_right = 45.0
+margin_bottom = 106.0
+rect_scale = Vector2( 1, 0.8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -203, -34 )
+jump = 300
+
+[node name="Bird" parent="Player" index="0"]
+texture = ExtResource( 15 )
+
+[connection signal="body_entered" from="Ground/Area2D" to="ParallaxBackground" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Ground/Area2D" to="Pipe" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Ground/Area2D" to="Player" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Pipe/Obj" to="UI" method="_on_Obj_body_exited"]
+[connection signal="body_entered" from="Pipe/AreaMorte1" to="ParallaxBackground" method="_on_AreaMorte1_body_entered"]
+[connection signal="body_entered" from="Pipe/AreaMorte1" to="Player" method="_on_AreaMorte1_body_entered"]
+[connection signal="timeout" from="Pipe/TimerSpawn" to="Pipe" method="_on_TimerSpawn_timeout"]
+[connection signal="button_down" from="UI/Jump" to="Player" method="_on_Jump_button_down"]
+[connection signal="button_up" from="UI/Play" to="ParallaxBackground" method="_on_Play_button_up"]
+[connection signal="button_up" from="UI/Play" to="Pipe" method="_on_Play_button_up"]
+[connection signal="button_up" from="UI/Play" to="Player" method="_on_Play_button_up"]
+[connection signal="pressed" from="UI/Leaderboard" to="UI" method="_on_Leaderboard_pressed"]
+[connection signal="button_up" from="ChangeSkin" to="Player" method="_on_ChangeSkin_button_up"]
+[connection signal="animation_finished" from="Player/AnimationPlayer" to="UI/Play" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="Player/AnimationPlayer" to="Player" method="_on_AnimationPlayer_animation_finished"]
+
+[editable path="Pipe"]
+[editable path="Player"]

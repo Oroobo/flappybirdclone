@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/wing-flap-1-6434.mp3-cb6a1a7bd51e4baaa3e27baa089b91fb.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/wing-flap-1-6434.mp3"
+dest_files=[ "res://.import/wing-flap-1-6434.mp3-cb6a1a7bd51e4baaa3e27baa089b91fb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

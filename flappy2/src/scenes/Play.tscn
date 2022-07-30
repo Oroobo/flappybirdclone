@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/script/Play.gd" type="Script" id=1]
+
+[node name="Play" type="Button"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -31.0
+margin_top = 36.0
+margin_right = 27.0
+margin_bottom = 58.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = "Play"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="." to="." method="_on_Play_button_up"]
